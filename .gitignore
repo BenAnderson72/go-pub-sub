@@ -1,2 +1,4 @@
 google-cloud-sdk/
 google-cloud-cli-394.0.0-linux-x86_64.tar.gz
+config.log
+.python-version

@@ -1,0 +1,2 @@
+https://www.gitpod.io/docs/introduction/languages/python
+https://dev.to/zenika/a-new-gitpod-template-for-gcloud-5cfb
