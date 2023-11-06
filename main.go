@@ -7,9 +7,9 @@ import (
 
 // Agent is a simple pub/sub agent
 type Agent struct {
-	mu    sync.Mutex
-	subs  map[string][]chan string
-	quit  chan struct{}
+	mu     sync.Mutex
+	subs   map[string][]chan string
+	quit   chan struct{}
 	closed bool
 }
 
@@ -76,7 +76,7 @@ func main() {
 	sub := agent.Subscribe("foo")
 
 	// Publish a message to the topic
-	go agent.Publish("foo", "hello world")
+	go agent.Publish("foo", "hello world x")
 
 	// Print the message
 	fmt.Println(<-sub)
