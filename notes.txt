@@ -1,2 +1,9 @@
 https://www.gitpod.io/docs/introduction/languages/python
 https://dev.to/zenika/a-new-gitpod-template-for-gcloud-5cfb
+
+https://cloud.google.com/sdk/gcloud/reference/auth/activate-service-account
+
+https://medium.easyread.co/event-driven-with-pubsub-and-golang-3924a4bba8a9
+
+gcloud auth activate-service-account --key-file .medium.auth.json
+

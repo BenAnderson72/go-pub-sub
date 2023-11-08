@@ -1,6 +1,7 @@
 package pubsub
 
 import (
+	"io"
 	"os"
 	"testing"
 
@@ -9,16 +10,26 @@ import (
 
 var projectID string = "my-pubsub-404318"
 var topicID string = "MyTopic"
+var subID string = "MySub"
+var writer io.Writer = os.Stdout
 
 func Test_publish(t *testing.T) {
 
 	msg := "Hello World"
-	writer := os.Stdout
+	// writer := os.Stdout
 
 	e := publish(writer, projectID, topicID, msg)
 	// if e != nil {
 	// 	fmt.Print(e)
 	// }
+
+	assert.Nil(t, e, e)
+
+}
+
+func Test_pullMsgs(t *testing.T) {
+
+	e := pullMsgs(writer, projectID, subID)
 
 	assert.Nil(t, e, e)
 
