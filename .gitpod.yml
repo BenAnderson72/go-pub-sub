@@ -4,11 +4,13 @@
 # List the start up tasks. Learn more: https://www.gitpod.io/docs/configure/workspaces/tasks
 tasks:
   - name: Script Task
-    init: echo 'init script' # runs during prebuild => https://www.gitpod.io/docs/configure/projects/prebuilds
+    # init: echo 'init script' # runs during prebuild => https://www.gitpod.io/docs/configure/projects/prebuilds
     command: echo 'start script'
   - name: Set GCloud
-    init: alias gcloud=/workspace/go-pub-sub/google-cloud-sdk/bin/gcloud
+    command: alias gcloud=/workspace/go-pub-sub/google-cloud-sdk/bin/gcloud
+  - name: GCloud auth
     command: gcloud auth application-default login
+
 
 # List the ports to expose. Learn more: https://www.gitpod.io/docs/configure/workspaces/ports
 # ports:
