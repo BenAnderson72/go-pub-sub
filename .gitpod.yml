@@ -3,11 +3,19 @@
 
 # List the start up tasks. Learn more: https://www.gitpod.io/docs/configure/workspaces/tasks
 tasks:
-  - name: Script Task
-    # init: echo 'init script' # runs during prebuild => https://www.gitpod.io/docs/configure/projects/prebuilds
-    command: echo 'start script'
-  - name: Set GCloud
-    command: alias gcloud=/workspace/go-pub-sub/google-cloud-sdk/bin/gcloud
+  - name: Install Py 3.11 (pre-req for gcloud install)
+    init: pyenv install 3.11
+    command: pyenv global 3.11
+  - name: Install gcloud
+    init: curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-454.0.0-linux-x86_64.tar.gz
+    command: |
+      tar -xf google-cloud-cli-454.0.0-linux-x86_64.tar.gz 
+      ./google-cloud-sdk/install.sh -q
+      source ./google-cloud-sdk/path.bash.inc
+  # - name: Update environ vars
+  #   command: export GOOGLE_APPLICATION_CREDENTIALS="./service_account.json"
+  # - name: Set GCloud
+  #   command: alias gcloud=/workspace/go-pub-sub/google-cloud-sdk/bin/gcloud
   - name: GCloud auth
     command: gcloud auth application-default login
 
