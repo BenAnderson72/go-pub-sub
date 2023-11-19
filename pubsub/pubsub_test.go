@@ -1,7 +1,9 @@
 package pubsub
 
 import (
+	"fmt"
 	"io"
+	"math/rand"
 	"os"
 	"testing"
 
@@ -15,7 +17,7 @@ var writer io.Writer = os.Stdout
 
 func Test_publish(t *testing.T) {
 
-	msg := "Hello World"
+	msg := fmt.Sprintf("Hello World %d", rand.Intn(100))
 	// writer := os.Stdout
 
 	e := publish(writer, projectID, topicID, msg)

@@ -5,3 +5,4 @@ config.log
 auth.txt
 .mediumauth.json
 google-cloud-cli-454.0.0-linux-x86_64.tar.gz
+.service_account.json

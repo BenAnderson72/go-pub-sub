@@ -15,7 +15,7 @@ tasks:
   # - name: Update environ vars
   #   command: export GOOGLE_APPLICATION_CREDENTIALS="./service_account.json"
   # - name: Set GCloud
-  #   command: alias gcloud=/workspace/go-pub-sub/google-cloud-sdk/bin/gcloud
+  #   command: alias gcloud=./google-cloud-sdk/bin/gcloud
   - name: GCloud auth
     command: gcloud auth application-default login
 
