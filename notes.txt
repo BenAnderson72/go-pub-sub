@@ -9,7 +9,7 @@ gcloud auth activate-service-account --key-file .service_account.json
 
 https://cloud.google.com/docs/authentication/provide-credentials-adc#how-to
 
-export GOOGLE_APPLICATION_CREDENTIALS=/.service_account.json
+export GOOGLE_APPLICATION_CREDENTIALS="/workspace/go-pubsub-ws/.service_account.json"
 
 gcloud auth application-default login --impersonate-service-account medium@my-pubsub-404318.iam.gserviceaccount.com
 

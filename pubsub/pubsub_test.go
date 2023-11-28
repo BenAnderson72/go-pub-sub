@@ -15,6 +15,12 @@ var topicID string = "MyTopic"
 var subID string = "MySub"
 var writer io.Writer = os.Stdout
 
+func init() {
+
+	os.Setenv("GOOGLE_APPLICATION_CREDENTIALS", "/workspace/go-pub-sub/.service_account.json")
+
+}
+
 func Test_publish(t *testing.T) {
 
 	msg := fmt.Sprintf("Hello World %d", rand.Intn(100))

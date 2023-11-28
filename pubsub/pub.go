@@ -28,6 +28,6 @@ func publish(w io.Writer, projectID, topicID, msg string) error {
 	if err != nil {
 		return fmt.Errorf("pubsub: result.Get: %w", err)
 	}
-	fmt.Fprintf(w, "Published a message; msg ID: %v\n", id)
+	fmt.Fprintf(w, "Published a message; msg ID: %v : '%q'\n", id, msg)
 	return nil
 }
